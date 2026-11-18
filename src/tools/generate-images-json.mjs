@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const projectRoot = process.cwd();
-const imageDir = path.join(projectRoot, "src", "img", "foods");
+const imageDir = path.join(projectRoot, "src", "icon", "foods");
 const outputDir = path.join(projectRoot, "src", "data");
 const outputFile = path.join(outputDir, "images.json");
 
@@ -33,7 +33,7 @@ function buildImageMap(files) {
       imageMap[foodCode] = [];
     }
 
-    imageMap[foodCode].push(`img/foods/${file}`);
+    imageMap[foodCode].push(`icon/foods/${file}`);
   }
 
   for (const foodCode of Object.keys(imageMap)) {

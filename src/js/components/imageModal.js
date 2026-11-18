@@ -79,6 +79,7 @@ export function bindImageModalEvents() {
     const nextBtn = event.target.closest("#nextImageBtn");
     if (nextBtn) {
       nextImage();
+      return;
     }
 
     // fullscreen
@@ -90,16 +91,6 @@ export function bindImageModalEvents() {
   });
 
   // Зургийг zoom хийгээд зөөж шилжих
-  document.addEventListener("mousedown", (event) => {
-    const imageEl = event.target.closest("#slideshowImage");
-    if (!imageEl || zoomLevel <= 1) return;
-
-    isDragging = true;
-    startX = event.clientX - translateX;
-    startY = event.clientY - translateY;
-    imageEl.style.cursor = "grabbing";
-  });
-
   document.addEventListener("mousedown", (event) => {
     const imageEl = event.target.closest("#slideshowImage");
     if (!imageEl || zoomLevel <= 1) return;

@@ -27,7 +27,8 @@ export async function renderSearchPage() {
 
   try {
     const nutritionData = await getNutritions(); // Хүнсний найрлагын JSON өгөгдүүдлийг авна.
-    await loadImages(); // Зургийн JSON өгөгдлийг ачаална.
+    // Зургийн JSON өгөгдлийг ачаална. Алдаа гарвал хуудсыг зураггүйгээр үргэлжлүүлнэ.
+    await loadImages().catch((error) => console.warn("Failed to load images:", error));
     initNutritionData(nutritionData);
     const groupedFoods = buildFoodGroups(nutritionData); // food_group бүрээр багцалсан food_code, food_name-үүдийг авна. Жишээ нь: "Cereals and Cereal products" → [{ food_code: "01_0106", food_name: "Barley flour, whole grain" }, ...]
 

@@ -10,10 +10,10 @@ export async function loadImages() {
     throw new Error("Failed to load images.json");
   }
 
-  imageMap = await response.json(); // Бүх images json { "01_0001": ["img/foods/01_0001_001.jpg", "img/foods/01_0001_001.jpg"], ... }
+  imageMap = await response.json(); // Бүх images json { "01_0001": ["icon/foods/01_0001_001.jpg", "icon/foods/01_0001_001.jpg"], ... }
 }
 
-// "01_0001" --> ["img/foods/01_0001_001.jpg", "img/foods/01_0001_001.jpg"]
+// "01_0001" --> ["icon/foods/01_0001_001.jpg", "icon/foods/01_0001_001.jpg"]
 export function getImagesByFoodCode(foodCode) {
   return imageMap[foodCode] || [];
 }
