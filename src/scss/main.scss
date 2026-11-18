@@ -23,6 +23,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 }
 
 @import "../../node_modules/bulma/bulma";
+@import "./components/buttons";
 @import "./components/navbar";
 @import "./layouts/sidebarPageLayout";
 @import "./components/sidebarMenuList";
