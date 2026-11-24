@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss/main.scss src/css/main.css",
-    "generate:images": "node src/tools/generate-images-json.mjs"
+    "sass": "sass --watch src/scss/main.scss src/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swe2461098-hub/buyka-spa.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/swe2461098-hub/buyka-spa/issues"
+  },
+  "homepage": "https://github.com/swe2461098-hub/buyka-spa#readme",
   "devDependencies": {
     "bulma": "^1.0.4",
     "sass": "^1.108.2"

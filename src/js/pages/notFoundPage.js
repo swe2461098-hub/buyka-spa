@@ -1,13 +1,21 @@
 import { renderPageLayout } from "../layouts/pageLayout.js";
 
 export function renderNotFoundPage() {
-  const app = document.getElementById("app");
 
-  app.innerHTML = renderPageLayout({
-    id: "notFound",
-    title: "Not Found",
-    content: `
-      <p>Welcome to the Not Found page.</p>
+    const app = document.getElementById("app");
+
+    app.innerHTML = renderPageLayout({
+
+        id: "notFound",
+
+        title: "404 - Хуудас олдсонгүй",
+
+        content: `
+
+      <p>Уучлаарай, таны хайсан хуудас олдсонгүй.</p>
+
     `,
-  });
+
+    });
+
 }
