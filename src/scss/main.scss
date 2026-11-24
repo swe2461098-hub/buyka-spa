@@ -28,6 +28,7 @@ $secondaryColorDark: color.scale($secondaryColor, $lightness: -15%);
 @import "./layouts/sidebarPageLayout";
 @import "./components/sidebarMenuList";
 @import "./layouts/pageTableContentsLayout";
+@import "./layouts/familyPages";
 
 // Mobile (<=768px) → Sidebar = slide menu
 // Tablet (<=1023px) → зөвхөн хэмжээ багасгана
