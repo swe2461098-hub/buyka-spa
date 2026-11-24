@@ -9,7 +9,7 @@ export function renderNavbar() {
           <div class="navbar-brand">
             <a class="navbar-item has-text-weight-bold is-uppercase app-logo" href="#/overview">
               <figure class="image">
-                <img src="./img/icon/icon.png" alt="Ургийн бичиг лого" />
+                <img src="./img/icon/icon.jpeg" alt="Ургийн бичиг лого" />
               </figure>
               <p>
                 <span class="is-hidden-mobile">${t("nav.brandSpan")}</span>
