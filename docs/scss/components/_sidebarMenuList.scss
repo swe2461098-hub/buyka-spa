@@ -1,0 +1,32 @@
+// sidebar-ийн гарчиг: "Үеээр хайх:", "Овгоор хайх:"
+.app-menu-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+// бүлгийн нэр: "1-р үе", "Хэрээд"
+.app-toggle-sublist {
+  white-space: nowrap;
+}
+
+// гишүүний нэр (checkbox-ийг нууж, сонгосон үед ногоон болгоно)
+.app-sublist-item {
+  white-space: nowrap;
+  line-height: 1.6rem;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--hover-bg);
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + span {
+    color: var(--green);
+  }
+}

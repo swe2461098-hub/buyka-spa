@@ -1,25 +1,11 @@
 {
-  "name": "buyka",
+  "name": "urgiin-bichig",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "sass": "sass --watch src/scss/main.scss src/css/main.css"
+    "sass": "sass src/scss/main.scss src/css/main.css --watch --quiet-deps --silence-deprecation=import",
+    "build:css": "sass src/scss/main.scss src/css/main.css --quiet-deps --silence-deprecation=import",
+    "start": "python -m http.server 8000"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/swe2461098-hub/buyka-spa.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/swe2461098-hub/buyka-spa/issues"
-  },
-  "homepage": "https://github.com/swe2461098-hub/buyka-spa#readme",
-  "devDependencies": {
-    "bulma": "^1.0.4",
-    "sass": "^1.108.2"
-  }
+  "devDependencies": { "bulma": "^1.0.2", "sass": "^1.80.0" }
 }
