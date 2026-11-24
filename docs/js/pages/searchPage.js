@@ -1,21 +1,36 @@
-import { renderPageLayout } from "../layouts/pageLayout.js";
+import { getMembers } from "../services/memberService.js";
 
-export function renderSearchPage() {
+export async function renderSearchPage() {
+  const app = document.getElementById("app");
 
-    const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="box">
+      <h2 class="title is-4">Хайлт</h2>
+      <p>Өгөгдөл ачаалж байна...</p>
+    </div>
+  `;
 
-    app.innerHTML = renderPageLayout({
+  try {
+    const members = await getMembers();
 
-        id: "search",
-
-        title: "Ургийн бичгийн хайлт",
-
-        content: `
-
-      <p>Ургийн гишүүдийн нэр болон мэдээллийг хайх хэсэг.</p>
-
-    `,
-
-    });
-
+    app.innerHTML = `
+      <div class="box">
+        <h2 class="title is-4">Хайлт</h2>
+        <p class="mb-4">Ургийн гишүүд: <strong>${members.length}</strong></p>
+        <ul>
+          ${members
+            .map((m) => `<li><strong>${m.full_name}</strong> (${m.member_code}) — ${m.generation}-р үе, ${m.birth_year}${m.death_year ? "–" + m.death_year : ""}</li>`)
+            .join("")}
+        </ul>
+      </div>
+    `;
+  } catch (error) {
+    app.innerHTML = `
+      <div class="box">
+        <h2 class="title is-4">Хайлт</h2>
+        <p class="has-text-danger">Ургийн гишүүдийн өгөгдөл ачаалахад алдаа гарлаа.</p>
+      </div>
+    `;
+    console.error(error);
+  }
 }

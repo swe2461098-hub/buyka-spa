@@ -1,28 +1,13 @@
-
 export function initRouter(routes) {
-
   function renderRoute() {
-
     const hash = window.location.hash || "#/overview";
-
-    const page = routes[hash];
-
-    if (page) {
-      page();
-    } else {
-      const notFound = routes["#/404"];
-
-      if (notFound) {
-        notFound();
-      }
-    }
-
+    const page = routes[hash] || routes["#/404"];
+    page?.();
   }
 
-  // Хуудас анх ачаалагдахад renderRoute() ажиллана
-  window.addEventListener("load", renderRoute);
-
-  // URL-ийн # хэсэг өөрчлөгдөх бүрд renderRoute() дахин ажиллана
+  // URL-ийн # хэсэг өөрчлөгдөх бүрд дахин ажиллана
   window.addEventListener("hashchange", renderRoute);
 
+  // Анх ачаалахад шууд ажиллана
+  renderRoute();
 }
